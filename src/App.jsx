@@ -83,158 +83,164 @@ function App() {
   };
 
   return (
-    <div className='container'>
-      <p className='h4'>Fixed Gear Calculator</p>
-
-      <div className='row g-2'>
-        <div className='col-12 col-lg-6'>
-          {/* Chainring and Cog Inputs */}
-          <div className='row g-0'>
-            <div className='col'>
-              <div className='form-floating'>
-                <input
-                  type='number'
-                  className='form-control rounded-0 rounded-start'
-                  id='chainring'
-                  placeholder='Chainring'
-                  min={limits.chainring.min}
-                  max={limits.chainring.max}
-                  value={chainring ?? ''}
-                  onChange={handleChange('chainring')}
-                />
-                <label htmlFor='chainring'>Chainring</label>
-              </div>
-            </div>
-            <div className='col col-auto bg-light border-top border-bottom p-3 font-monospace'>
-              /
-            </div>
-            <div className='col'>
-              <div className='form-floating'>
-                <input
-                  type='number'
-                  className='form-control rounded-0 rounded-end'
-                  id='cog'
-                  placeholder='Cog'
-                  min={limits.cog.min}
-                  max={limits.cog.max}
-                  value={cog ?? ''}
-                  onChange={handleChange('cog')}
-                />
-                <label htmlFor='cog'>Cog</label>
-              </div>
-            </div>
-          </div>
+    <>
+      <nav class='navbar bg-body-tertiary mb-2'>
+        <div class='container-fluid'>
+          <span class='navbar-brand mb-0 h1'>Fixed Gear Calculator</span>
         </div>
-        <div className='col-12 col-lg-6'>
-          {/* Wheel Size and Tire Size Inputs */}
-          <div className='row g-0 mb-2'>
-            <div className='col'>
-              <div className='form-floating'>
-                <select
-                  className='form-control rounded-0 rounded-start'
-                  value={wheel ?? ''}
-                  onChange={handleChange('wheel')}
-                  id='wheel'
-                >
-                  <option value=''>Select wheel size</option>
-                  <option value='700'>700c</option>
-                  <option value='650'>650b</option>
-                  <option value='26'>26"</option>
-                  <option value='20'>20"</option>
-                </select>
-                <label htmlFor='wheel'>Wheel Size</label>
-              </div>
-            </div>
-            <div className='col col-auto bg-light border-top border-bottom p-3 font-monospace'>
-              x
-            </div>
-            <div className='col'>
-              <div className='input-group'>
+      </nav>
+      <div className='container'>
+        <div className='row g-2'>
+          <div className='col-12 col-lg-6'>
+            {/* Chainring and Cog Inputs */}
+            <div className='row g-0'>
+              <div className='col'>
                 <div className='form-floating'>
                   <input
                     type='number'
-                    className='form-control rounded-0'
-                    id='tire'
-                    placeholder='Tire'
-                    value={tire ?? ''}
-                    onChange={handleChange('tire')}
+                    className='form-control rounded-0 rounded-start'
+                    id='chainring'
+                    placeholder='Chainring'
+                    min={limits.chainring.min}
+                    max={limits.chainring.max}
+                    value={chainring ?? ''}
+                    onChange={handleChange('chainring')}
                   />
-                  <label htmlFor='tire'>Tire Size</label>
+                  <label htmlFor='chainring'>Chainring</label>
                 </div>
+              </div>
+              <div className='col col-auto bg-light border-top border-bottom p-3 font-monospace'>
+                /
+              </div>
+              <div className='col'>
+                <div className='form-floating'>
+                  <input
+                    type='number'
+                    className='form-control rounded-0 rounded-end'
+                    id='cog'
+                    placeholder='Cog'
+                    min={limits.cog.min}
+                    max={limits.cog.max}
+                    value={cog ?? ''}
+                    onChange={handleChange('cog')}
+                  />
+                  <label htmlFor='cog'>Cog</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='col-12 col-lg-6'>
+            {/* Wheel Size and Tire Size Inputs */}
+            <div className='row g-0 mb-2'>
+              <div className='col'>
                 <div className='form-floating'>
                   <select
-                    className='form-control rounded-0 rounded-end'
-                    id='unit'
-                    value={unit ?? ''}
-                    onChange={handleChange('unit')}
+                    className='form-control rounded-0 rounded-start'
+                    value={wheel ?? ''}
+                    onChange={handleChange('wheel')}
+                    id='wheel'
                   >
-                    <option value=''>Select unit</option>
-                    <option value='mm'>mm</option>
-                    <option value='inch'>inch</option>
+                    <option value=''>Select wheel size</option>
+                    <option value='700'>700c</option>
+                    <option value='650'>650b</option>
+                    <option value='26'>26"</option>
+                    <option value='20'>20"</option>
                   </select>
-                  <label htmlFor='unit'>Unit</label>
+                  <label htmlFor='wheel'>Wheel Size</label>
+                </div>
+              </div>
+              <div className='col col-auto bg-light border-top border-bottom p-3 font-monospace'>
+                x
+              </div>
+              <div className='col'>
+                <div className='input-group'>
+                  <div className='form-floating'>
+                    <input
+                      type='number'
+                      className='form-control rounded-0'
+                      id='tire'
+                      placeholder='Tire'
+                      value={tire ?? ''}
+                      onChange={handleChange('tire')}
+                    />
+                    <label htmlFor='tire'>Tire Size</label>
+                  </div>
+                  <div className='form-floating'>
+                    <select
+                      className='form-control rounded-0 rounded-end'
+                      id='unit'
+                      value={unit ?? ''}
+                      onChange={handleChange('unit')}
+                    >
+                      <option value=''>Select unit</option>
+                      <option value='mm'>mm</option>
+                      <option value='inch'>inch</option>
+                    </select>
+                    <label htmlFor='unit'>Unit</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* <button className='btn btn-primary mb-2'>Save Setup</button> */}
+
+        <ul className='list-group list-group-horizontal-sm mb-2'>
+          <li className='list-group-item flex-fill'>
+            <b>Ratio:</b> {gearRatio ? gearRatio.toFixed(2) : ''}
+          </li>
+          <li className='list-group-item flex-fill'>
+            <b>Skid Patches:</b> {skidPatches ? skidPatches : ''}
+          </li>
+          <li className='list-group-item flex-fill'>
+            <b>Gear Inches:</b> {gearInches ? gearInches.toFixed(2) : ''}
+          </li>
+        </ul>
+
+        {/* Similar Ratios */}
+        <ul className='list-group mb-3'>
+          <li className='list-group-item fw-bold'>Similar Ratios</li>
+          {similarRatios
+            .sort((a, b) => a.chainring / a.cog - b.chainring / b.cog)
+            .map((ratio) => {
+              const isActive =
+                ratio.chainring === chainring && ratio.cog === cog;
+              const content = (
+                <>
+                  {ratio.chainring} / {ratio.cog} ={' '}
+                  {(ratio.chainring / ratio.cog).toFixed(2)}
+                </>
+              );
+
+              return isActive ? (
+                <li
+                  key={JSON.stringify(ratio)}
+                  className='list-group-item active'
+                  style={{ cursor: 'text' }}
+                >
+                  {content}
+                </li>
+              ) : (
+                <button
+                  key={JSON.stringify(ratio)}
+                  type='button'
+                  className='list-group-item list-group-item-action'
+                  onClick={() =>
+                    setInputs((prev) => ({
+                      ...prev,
+                      chainring: ratio.chainring,
+                      cog: ratio.cog,
+                    }))
+                  }
+                >
+                  {content}
+                </button>
+              );
+            })}
+        </ul>
       </div>
-
-      {/* <button className='btn btn-primary mb-2'>Save Setup</button> */}
-
-      <ul className='list-group list-group-horizontal-sm mb-2'>
-        <li className='list-group-item flex-fill'>
-          <b>Ratio:</b> {gearRatio ? gearRatio.toFixed(2) : ''}
-        </li>
-        <li className='list-group-item flex-fill'>
-          <b>Skid Patches:</b> {skidPatches ? skidPatches : ''}
-        </li>
-        <li className='list-group-item flex-fill'>
-          <b>Gear Inches:</b> {gearInches ? gearInches.toFixed(2) : ''}
-        </li>
-      </ul>
-
-      {/* Similar Ratios */}
-      <ul className='list-group mb-3'>
-        <li className='list-group-item fw-bold'>Similar Ratios</li>
-        {similarRatios
-          .sort((a, b) => a.chainring / a.cog - b.chainring / b.cog)
-          .map((ratio) => {
-            const isActive = ratio.chainring === chainring && ratio.cog === cog;
-            const content = (
-              <>
-                {ratio.chainring} / {ratio.cog} ={' '}
-                {(ratio.chainring / ratio.cog).toFixed(2)}
-              </>
-            );
-
-            return isActive ? (
-              <li
-                key={JSON.stringify(ratio)}
-                className='list-group-item active'
-                style={{ cursor: 'text' }}
-              >
-                {content}
-              </li>
-            ) : (
-              <button
-                key={JSON.stringify(ratio)}
-                type='button'
-                className='list-group-item list-group-item-action'
-                onClick={() =>
-                  setInputs((prev) => ({
-                    ...prev,
-                    chainring: ratio.chainring,
-                    cog: ratio.cog,
-                  }))
-                }
-              >
-                {content}
-              </button>
-            );
-          })}
-      </ul>
-    </div>
+    </>
   );
 }
 
