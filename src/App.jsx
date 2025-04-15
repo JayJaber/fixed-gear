@@ -85,7 +85,7 @@ function App() {
   return (
     <>
       <nav class='navbar bg-body-tertiary mb-2'>
-        <div class='container-fluid'>
+        <div class='container'>
           <span class='navbar-brand mb-0 h1'>Fixed Gear Calculator</span>
         </div>
       </nav>
