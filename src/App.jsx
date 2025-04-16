@@ -151,8 +151,8 @@ function App() {
                     id='wheel'
                   >
                     <option value=''>Select wheel size</option>
-                    <option value='700'>700c</option>
-                    <option value='650'>650b</option>
+                    <option value='700'>700c / 29"</option>
+                    <option value='650'>650b / 27.5"</option>
                     <option value='26'>26"</option>
                     <option value='20'>20"</option>
                   </select>
