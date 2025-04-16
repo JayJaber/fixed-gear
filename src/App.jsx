@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import logo from '/cog.png';
 
 function App() {
   const [inputs, setInputs] = useState(() => {
@@ -84,9 +85,18 @@ function App() {
 
   return (
     <>
-      <nav class='navbar bg-body-tertiary mb-2'>
-        <div class='container'>
-          <span class='navbar-brand mb-0 h1'>Fixed Gear Calculator</span>
+      <nav className='navbar bg-body-tertiary mb-2'>
+        <div className='container'>
+          <a className='navbar-brand' href='#'>
+            <img
+              src={logo}
+              alt='Logo'
+              // width='30'
+              height='24'
+              className='d-inline-block align-text-top me-1'
+            />
+            Fixed Gear Calculator
+          </a>
         </div>
       </nav>
       <div className='container'>
